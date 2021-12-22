@@ -57,7 +57,7 @@ document.getElementById("test1").addEventListener("click", function(){
 	document.getElementById("main").append(div);
 
 
-	$.get("http://ip-api.com/json/"+ /*document.getElementById("in").value+ */ "?fields=61439", function(data){
+	$.get("https://ipapi.co/json/", function(data){
 	var myArr=Object.keys(data);
 	var myArr2=Object.values(data);
 	let txt = "";
