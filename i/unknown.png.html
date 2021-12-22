@@ -28,15 +28,16 @@ html,body
 
 }
 button{
+float: bottom;
 margin-left: 0%;
-margin-top: 32%;
+position:relative;
+    top:65%;
+    left:48%;
 border:none;
 background:transparent;
 font-size: 90px;
-text-align: center;
 font-weight: 600;
-
-width: 100%;
+z-index: 0;
 }
 
 .heart {
@@ -53,8 +54,12 @@ width: 100%;
   overflow: hidden;
   height: 30em;
   animation: type 4s steps(120, end); 
-  
+  z-index: 1;
 }
+
+@keyframes type{ 
+  from { height: 0; } 
+} 
 
 @keyframes type{ 
   from { height: 0; } 
