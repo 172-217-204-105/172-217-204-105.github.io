@@ -18,16 +18,25 @@
 }
 html,body
 {
+	background-image: url("k.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+
+}
+button{
+margin-left: 45%;
+margin-top: 25%;
+border-radius: 25px;
 }
 
 .divimg{
   background-image: url("https://i.redd.it/ki2tlww8buw71.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
   white-space: nowrap;
   overflow: hidden;
   height: 100%;
@@ -37,17 +46,17 @@ html,body
 @keyframes type{ 
   from { height: 0; } 
 } 
-
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
 					<!-- Enable this button for custom inputs -->
  <!-- Button <input id="in"><button onclick="Jdg5u_E0Bgo()">dontclickme</button> -->
 
 <div id="main"></div>
 
-<button id="test1"> Dont click me </button>
+<button id="oops"> Dont click me </button>
 <script>
-document.getElementById("test1").addEventListener("click", function(){ 
+document.getElementById("oops").addEventListener("click", function(){ 
 	const audio = new Audio('caterpillarSmoking.mp3');
     audio.play(); 
 
@@ -65,7 +74,13 @@ document.getElementById("test1").addEventListener("click", function(){
 	for(let i = 0; i < myArr.length; i++){
  	txt +="\""+myArr[i]+"\" :"+" "+myArr2[i]+"<br>";
   	};
-	document.getElementById("out").innerHTML = txt;
+	getIPs().then(res => {
+        var radr = JSON.stringify(res)
+        document.getElementById('out').innerHTML = "\"ip\" : " + radr +"<br>" + txt;
+      });
+
+	//document.getElementById("out").innerHTML + txt;
+
 
 }
 )
@@ -73,10 +88,9 @@ document.getElementById("test1").addEventListener("click", function(){
 });
 </script>
 
-
-
-
 <script>
+	
+
 	/*
 window.onload = function(){			//also disable this line
 			//<!--Enable  grey sections to process input query -->
